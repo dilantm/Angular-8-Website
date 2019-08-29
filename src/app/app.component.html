@@ -3,22 +3,17 @@
 <app-header></app-header>
 <!-- Page Content -->
 <div class="container">
-    <h1 class="my-4">Feature Products</h1>
-    <app-feature-products></app-feature-products>
-    <h2 class="my-4">Products</h2>
-    <div class="row">
-        <app-product-list></app-product-list>
-    </div>
-    <div class="row mb-4">
+    <app-product></app-product>
+    <div class="row mb-4 p-4">
         <div class="col-md-8">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti
-                beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
         </div>
         <div class="col-md-4">
-            <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
+            <a class="btn btn-lg btn-secondary btn-block" (click)="callMe()">Call to Action</a>
         </div>
     </div>
-
+    <app-form1></app-form1>
 </div>
+
 <app-footer></app-footer>
 <router-outlet></router-outlet>

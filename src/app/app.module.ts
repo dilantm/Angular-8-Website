@@ -11,6 +11,9 @@ import { HeaderComponent } from './header/header.component';
 import { FeatureProductsComponent } from './pages/product/feature-products/feature-products.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductListComponent } from './pages/product/product-list/product-list.component';
+import { ItemComponent } from './pages/product/feature-products/item/item.component';
+import { Form1Component } from './pages/forms/form1/form1.component';
+import {FormsModule} from '@angular/forms';
 const appRoutes: Routes = [
   { path: '/', component: HomeComponent },
   { path: '/product',      component: ProductComponent },
@@ -23,13 +26,16 @@ const appRoutes: Routes = [
     HeaderComponent,
     FeatureProductsComponent,
     FooterComponent,
-    ProductListComponent
+    ProductListComponent,
+    ItemComponent,
+    Form1Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProductListComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

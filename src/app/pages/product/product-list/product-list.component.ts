@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-product-list',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProductListComponent implements OnInit {
   componentTitle = 'Product List';
   rating = Array;
+  isImage = true;
+  showImage = false;
   products: any[] = [
     {
     'productId': 1,
@@ -61,5 +64,13 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
   }
+  onShowImage() {
+    this.showImage = !this.showImage;
+  }
+
+  toggleImage() {
+    this.showImage = !this.showImage;
+  }
+
 
 }
