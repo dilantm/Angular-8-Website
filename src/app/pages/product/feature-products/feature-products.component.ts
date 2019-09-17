@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/model/product.model';
 
 @Component({
   selector: 'app-feature-products',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeatureProductsComponent implements OnInit {
 
-  FeatureProducts: any[] = [
+  FeatureProducts: Product[] = [
     {
     'productId': 1,
     'productName': 'Leaf Rake',
@@ -56,6 +57,29 @@ export class FeatureProductsComponent implements OnInit {
     'imageUrl': 'http://bestjquery.com/tutorial/product-grid/demo58/images/img-5.jpg',
     'imageUrl2': 'http://bestjquery.com/tutorial/product-grid/demo58/images/img-6.jpg'
   }];
+
+  filteredby:string;
+  filteredProduct :Product[];
+  _listfilter : string;
+
+  get listfilter():string{
+    return this._listfilter;
+  }
+
+  set listfilter(value : string) {
+    this._listfilter = value;
+    this.filteredProduct = this.listfilter ? this.performFilter(this.listfilter): this.FeatureProducts;
+    // this.filteredby = this.listfilter.toLocaleLowerCase();
+    // this.filteredProduct = this.FeatureProducts.filter((FeatureProducts:Product)=>
+    // FeatureProducts.productName.toLocaleLowerCase().indexOf(this.filteredby)!==-1);
+
+  }
+
+  performFilter(filteredby:string):Product[]{
+    filteredby = filteredby.toLocaleLowerCase();
+    return this.FeatureProducts.filter((FeatureProducts:Product)=>FeatureProducts.productName.toLocaleLowerCase().indexOf(filteredby)!==-1)
+  }
+
 
   constructor() { }
 

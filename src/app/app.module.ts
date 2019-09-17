@@ -14,6 +14,10 @@ import { ProductListComponent } from './pages/product/product-list/product-list.
 import { ItemComponent } from './pages/product/feature-products/item/item.component';
 import { Form1Component } from './pages/forms/form1/form1.component';
 import {FormsModule} from '@angular/forms';
+import { ConvertToSpacePipe } from './shared/convert.spaces.pipe';
+import { GrdFilterPipe } from './shared/grd-filter.pipe';
+
+
 const appRoutes: Routes = [
   { path: '/', component: HomeComponent },
   { path: '/product',      component: ProductComponent },
@@ -28,7 +32,9 @@ const appRoutes: Routes = [
     FooterComponent,
     ProductListComponent,
     ItemComponent,
-    Form1Component
+    Form1Component,
+    ConvertToSpacePipe,
+    GrdFilterPipe
   ],
   imports: [
     BrowserModule,

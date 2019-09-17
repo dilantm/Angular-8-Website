@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { DatePipe } from '@angular/common';
+import { Product } from 'src/app/model/product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -11,7 +13,8 @@ export class ProductListComponent implements OnInit {
   rating = Array;
   isImage = true;
   showImage = false;
-  products: any[] = [
+  searchText;
+  products: Product[] = [
     {
     'productId': 1,
     'productName': 'Leaf Rake',
@@ -70,6 +73,9 @@ export class ProductListComponent implements OnInit {
 
   toggleImage() {
     this.showImage = !this.showImage;
+  }
+  toggleDtaePipe(date) {
+
   }
 
 

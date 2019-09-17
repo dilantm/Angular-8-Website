@@ -1,7 +1,14 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="input-group">
+            <input type="text" name="search" [(ngModel)]="searchText" id="search" value="test" placeholder="Search accounts, contracts and transactions" class="form-control">
+        </div>
+    </div>
+</div>
 <a class="btn btn-lg btn-secondary btn-block" (click)='toggleImage()'>{{showImage ? 'Hide Image' : 'Show Image'}}</a>
 
 <div class="row">
-    <div class="col-md-3 col-sm-6" *ngFor='let product of products'>
+    <div class="col-md-3 col-sm-6" *ngFor='let product of products |grdFilter: {productName: searchText, productCode:searchText}'>
         <div class="product-grid">
             <div class="product-image" *ngIf="showImage">
                 <a href="#">
@@ -24,9 +31,10 @@
                 <li class="fa fa-star disable"></li>
             </ul>
             <div class="product-content">
-                <h3 class="title"><a href="#">{{product.productName}}</a></h3>
-                <div class="price">${{product.price}}
-                    <span>${{product.PrePrice}}</span>
+                <h3 class="title"><a href="#">{{product.productName | lowercase}}</a></h3>
+                <h3 class="title"><a href="#">{{product.productCode | uppercase | convertToSpace:'-'}}</a></h3>
+                <div class="price">{{product.price | currency:'LKR':'LKR':'1.2-2'}}
+                    <span>{{product.PrePrice}}</span>
                 </div>
                 <a class="add-to-cart">+ Add To Cart</a>
             </div>

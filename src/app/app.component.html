@@ -12,6 +12,15 @@
             <a class="btn btn-lg btn-secondary btn-block" (click)="callMe()">Call to Action</a>
         </div>
     </div>
+    <div class="row mb-4 p-4">
+        <div class="col-md-8">
+            <p>Change Date By Pipe</p>
+            <p>{{customDate | date: format}}</p>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block" (click)="changeDateFormat()">Call to Change Date Format</a>
+        </div>
+    </div>
     <app-form1></app-form1>
 </div>
 
