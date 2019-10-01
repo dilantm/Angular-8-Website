@@ -16,7 +16,8 @@ import { Form1Component } from './pages/forms/form1/form1.component';
 import {FormsModule} from '@angular/forms';
 import { ConvertToSpacePipe } from './shared/convert.spaces.pipe';
 import { GrdFilterPipe } from './shared/grd-filter.pipe';
-
+import { StarRatingComponent } from './shared/star-rating/star-rating.component';
+import { ToastrModule } from 'ngx-toastr';
 
 const appRoutes: Routes = [
   { path: '/', component: HomeComponent },
@@ -34,12 +35,14 @@ const appRoutes: Routes = [
     ItemComponent,
     Form1Component,
     ConvertToSpacePipe,
-    GrdFilterPipe
+    GrdFilterPipe,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [ProductListComponent],
   bootstrap: [AppComponent]

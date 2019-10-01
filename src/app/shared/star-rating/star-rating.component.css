@@ -1,0 +1,12 @@
+.crop {
+    overflow: hidden;
+    position: absolute;
+}
+
+.checked {
+    color: rgb(245, 170, 9);
+}
+
+.underlayer {
+    z-index: 10;
+}

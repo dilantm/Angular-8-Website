@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { DatePipe } from '@angular/common';
 import { Product } from 'src/app/model/product.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-list',
@@ -23,7 +24,7 @@ export class ProductListComponent implements OnInit {
     'description': 'Leaf rake with 48-inch wooden handle.',
     'price': 19.95,
     'PrePrice': 22.00,
-    'starRating': 3.2,
+    'starRating': 3,
     'imageUrl': 'http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg',
     'imageUrl2': 'http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg',
   },
@@ -35,7 +36,7 @@ export class ProductListComponent implements OnInit {
     'description': '15 gallon capacity rolling garden cart',
     'price': 32.99,
     'PrePrice': 35.00,
-    'starRating': 4.2,
+    'starRating': 2.2,
     'imageUrl': 'http://bestjquery.com/tutorial/product-grid/demo6/images/img-7.jpg',
     'imageUrl2': 'http://bestjquery.com/tutorial/product-grid/demo6/images/img-8.jpg'
   },
@@ -63,7 +64,7 @@ export class ProductListComponent implements OnInit {
     'imageUrl': 'http://bestjquery.com/tutorial/product-grid/demo58/images/img-5.jpg',
     'imageUrl2': 'http://bestjquery.com/tutorial/product-grid/demo58/images/img-6.jpg'
   }];
-  constructor() { }
+  constructor( private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -76,6 +77,12 @@ export class ProductListComponent implements OnInit {
   }
   toggleDtaePipe(date) {
 
+  }
+
+  onRatingClicked(message: string): void
+  // tslint:disable-next-line: one-line
+  {
+    this.toastr.success(this.componentTitle = message, 'Toastr fun!');
   }
 
 

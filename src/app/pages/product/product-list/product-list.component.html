@@ -22,22 +22,21 @@
                 </ul>
                 <span class="product-new-label">Sale</span>
                 <span class="product-discount-label">20%</span>
+                <span class="product-discount-label" style="margin-top: 30px;">{{componentTitle}}</span>
             </div>
-            <ul class="rating">
-                <li class="fa fa-star"></li>
-                <li class="fa fa-star"></li>
-                <li class="fa fa-star"></li>
-                <li class="fa fa-star"></li>
-                <li class="fa fa-star disable"></li>
-            </ul>
+
             <div class="product-content">
                 <h3 class="title"><a href="#">{{product.productName | lowercase}}</a></h3>
                 <h3 class="title"><a href="#">{{product.productCode | uppercase | convertToSpace:'-'}}</a></h3>
                 <div class="price">{{product.price | currency:'LKR':'LKR':'1.2-2'}}
                     <span>{{product.PrePrice}}</span>
                 </div>
-                <a class="add-to-cart">+ Add To Cart</a>
+                <div class="btn-group-vertical">
+                    <app-star-rating [item]="product" (ratingClicked)='onRatingClicked($event)'></app-star-rating>
+                </div>
             </div>
+
         </div>
+
     </div>
 </div>
